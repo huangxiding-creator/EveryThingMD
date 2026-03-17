@@ -1,14 +1,103 @@
-# 大文件 (超过50MB)
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific - 大文件 (超过50MB)
 *.pdf
 *.epub
 *.pptx
 *.docx
+*.doc
 
 # 临时文件
-__pycache__/
-*.pyc
 .temp_compare/
+*.pyc
 
-# 输出目录（已转换的MD文件太大）
-*_md_v2/
-*_md_v3/
+# 已转换的输出目录
+*_md_v*/
+!*_md_v*/.gitkeep
+
+# PaddleOCR 模型缓存
+inference/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ruff
+.ruff_cache/
+
+# 测试文档目录（包含大文件）
+《中国风电工程EPC总承包发展研究报告》/

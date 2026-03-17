@@ -1,0 +1,129 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "everythingmd"
+version = "1.0.0"
+description = "AI-Powered Document to Markdown Converter with Intelligent Dual-Engine"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "huangxiding-creator", email = "huangxiding@example.com"}
+]
+maintainers = [
+    {name = "huangxiding-creator", email = "huangxiding@example.com"}
+]
+keywords = [
+    "markdown",
+    "document-converter",
+    "ocr",
+    "pdf-to-markdown",
+    "docx-to-markdown",
+    "paddleocr",
+    "markitdown",
+    "ai",
+    "document-processing",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Office Suites",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "markitdown>=0.0.1a2",
+    "paddleocr>=2.7.0",
+    "paddlepaddle>=2.5.0",
+    "pymupdf>=1.23.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "black>=23.0.0",
+    "pre-commit>=3.0.0",
+]
+all = [
+    "markitdown[all]>=0.0.1a2",
+    "paddleocr>=2.7.0",
+    "paddlepaddle>=2.5.0",
+    "pymupdf>=1.23.0",
+]
+
+[project.scripts]
+everythingmd = "dir2md.dir2md_dual:main"
+dir2md = "dir2md.dir2md_dual:main"
+
+[project.urls]
+Homepage = "https://github.com/huangxiding-creator/EveryThingMD"
+Documentation = "https://github.com/huangxiding-creator/EveryThingMD#readme"
+Repository = "https://github.com/huangxiding-creator/EveryThingMD.git"
+Issues = "https://github.com/huangxiding-creator/EveryThingMD/issues"
+Changelog = "https://github.com/huangxiding-creator/EveryThingMD/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dir2md*"]
+
+[tool.setuptools.package-data]
+dir2md = ["py.typed"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # function call in default argument
+]
+
+[tool.ruff.isort]
+known-first-party = ["dir2md"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["dir2md"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if TYPE_CHECKING:",
+    "raise NotImplementedError",
+]
