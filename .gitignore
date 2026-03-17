@@ -1,0 +1,14 @@
+# 大文件 (超过50MB)
+*.pdf
+*.epub
+*.pptx
+*.docx
+
+# 临时文件
+__pycache__/
+*.pyc
+.temp_compare/
+
+# 输出目录（已转换的MD文件太大）
+*_md_v2/
+*_md_v3/
